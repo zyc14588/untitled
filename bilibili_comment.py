@@ -1,6 +1,11 @@
 import requests
 import json
 import xmnlp
+from xmnlp.sentiment import load, predict
+import sys
+#sys.path.append("C:/Users/zyc14588/AppData/Local/Programs/Python/Python38/Lib/site-packages/xmnlp/sentiment")
+load('E:/untiled/stentiment_gj.pickle')
+xmnlp.set_stopword('E:/untiled/百度停用词表.txt')
 def getHTML(html,av):
     count=1
     fi=open('bilibili.txt','w',encoding='utf-8')
@@ -42,14 +47,14 @@ def getHTML(html,av):
                 if xmnlp.sentiment(comMsg)<0.1:
                     print('评论:',comMsg)
                     print('情感倾向', xmnlp.sentiment(comMsg))
-                    '''
+                '''
                 if cont['data']['replies'][i]['replies']== None:
                     continue
                 leng=len(cont['data']['replies'][i]['replies']['message'])
                 for j in range(leng):
                     comMsgRp=cont['data']['replies'][i]['replies'][j]['content']['message']
                     fi.write(comMsgRp + '\n')
-                    '''
+                '''
         else:
             break
         #print("第%d页写入成功！"%count)
