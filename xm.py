@@ -4,4 +4,4 @@
 #sys.path.append('E:/untitled')
 from xmnlp.trainer import SentimentTrainer
 
-SentimentTrainer.sentiment('E:/untitled/pos.txt', 'E:/untitled/neg.txt', 'E:/untitled/sentiment_gj2.pickle')
+SentimentTrainer.sentiment('E:/untitled/pos_2.txt', 'E:/untitled/neg_2.txt', 'E:/untitled/sentiment_gj_600k_2.pickle')

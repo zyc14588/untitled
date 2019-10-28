@@ -3,9 +3,11 @@ import json
 import xmnlp
 from xmnlp.sentiment import load, predict
 import sys
-#sys.path.append("C:/Users/zyc14588/AppData/Local/Programs/Python/Python38/Lib/site-packages/xmnlp/sentiment")
-load('E:/untiled/stentiment_gj.pickle')
-xmnlp.set_stopword('E:/untiled/百度停用词表.txt')
+sys.path.append("C:/Users/zyc14588/AppData/Local/Programs/Python/Python38/Lib/site-packages/xmnlp/sentiment")
+#load("./sentiment_gj2.pickle")
+#load("./sentiment_gj_600k_1.pickle")
+load("./sentiment_gj_600k_2.pickle")
+#xmnlp.set_stopword("./bdstop.txt")
 def getHTML(html,av):
     count=1
     fi=open('bilibili.txt','w',encoding='utf-8')
